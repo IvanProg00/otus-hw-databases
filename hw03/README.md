@@ -49,3 +49,8 @@ ALTER USER "user" WITH SUPERUSER;
 ```
 
 ### 4. Подключиться к серверу используя pgAdmin или другое аналогичное приложение
+
+Для выполнения этого пункта я использовал приложение [TablePlus](https://tableplus.com/)
+
+![Login with TablePlus](img/login_tableplus.png)
+![Connected with TablePlus](img/connect_with_tableplus.png)
