@@ -33,4 +33,19 @@ docker run -e POSTGRES_PASSWORD=postgres -d postgres:14-alpine
 
 ### 3. Создать клиента с подключением к базе данных postgres через командную строку
 
+![Connect](img/connect_postgres.png)
+![Create User](img/create_user.png)
+![Add Privileges](img/add_privileges.png)
+![Change User](img/change_user.png)
+
+```bash
+psql -U postgres --host localhost --port 5432 -W
+CREATE USER "user" WITH ENCRYPTED PASSWORD 'password';
+ALTER USER "user" WITH SUPERUSER;
+
+\conninfo
+\c postgres user
+\conninfo
+```
+
 ### 4. Подключиться к серверу используя pgAdmin или другое аналогичное приложение
