@@ -8,6 +8,12 @@
 
 ### 1. Развернуть контейнер с PostgreSQL или установить СУБД на виртуальную машину
 
+![Start Postgres](img/start_postgres.png)
+
+```bash
+docker run -e POSTGRES_PASSWORD=postgres postgres:14-alpine
+```
+
 ### 2. Запустить сервер
 
 ### 3. Создать клиента с подключением к базе данных postgres через командную строку
