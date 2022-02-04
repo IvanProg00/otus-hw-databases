@@ -29,29 +29,19 @@
   - title: Категории не будут повторяться
 - Producers
   - title: Названия не могут повторяться, и мы будем делать выборку по названиям компаний
-- All Fields
-  - updated_at: Валедировать чтобы поле было равно, или больше чем created_at
 
 ### Индексы, Ограничения и Условия
 
 - products
-  - title (UNIQUE)
+  - title
   - price (CHECK >= 0)
   - created_at
-  - updated_at (CHECK >= created_at)
 - addresses
   - country
   - city
-  - updated_at (CHECK >= created_at)
 - categories
   - title (UNIQUE)
 - purchases
   - amount (CHECK >= 0)
-  - updated_at (CHECK >= created_at)
-- shoppers
-  - updated_at (CHECK >= created_at)
-- suppliers
-  - updated_at (CHECK >= created_at)
 - producers
   - title (UNIQUE)
-  - updated_at (CHECK >= created_at)
