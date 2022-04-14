@@ -38,6 +38,7 @@ CREATE TABLE products_workers.shoppers (
 	CONSTRAINT address_fk
 		FOREIGN KEY (address_id)
 		REFERENCES addresses(id)
+		ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS products_workers.producers;
@@ -51,6 +52,7 @@ CREATE TABLE products_workers.producers (
 	CONSTRAINT address_fk
 		FOREIGN KEY (address_id)
 		REFERENCES addresses(id)
+		ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS products.categories;
@@ -72,6 +74,7 @@ CREATE TABLE products.products (
 	CONSTRAINT category_fk
 		FOREIGN KEY (category_id)
 		REFERENCES products.categories(id)
+		ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS producers_products;
@@ -81,10 +84,12 @@ CREATE TABLE producers_products (
 	product_id BIGSERIAL,
 	CONSTRAINT producer_fk
 		FOREIGN KEY (producer_id)
-		REFERENCES products_workers.producers(id),
+		REFERENCES products_workers.producers(id)
+		ON DELETE CASCADE,
 	CONSTRAINT product_fk
 		FOREIGN KEY (product_id)
 		REFERENCES products.products(id)
+		ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS products_workers.suppliers;
@@ -107,10 +112,12 @@ CREATE TABLE products_workers.purchases (
 	updated_at TIMESTAMPTZ NOT NULL,
 	CONSTRAINT shopper_fk
 		FOREIGN KEY (shopper_id)
-		REFERENCES products_workers.shoppers(id),
+		REFERENCES products_workers.shoppers(id)
+		ON DELETE CASCADE,
 	CONSTRAINT address_fk
 		FOREIGN KEY (address_id)
 		REFERENCES addresses(id)
+		ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS products_purchases;
@@ -120,8 +127,10 @@ CREATE TABLE products_purchases (
 	purchase_id BIGSERIAL,
 	CONSTRAINT product_fk
 		FOREIGN KEY (product_id)
-		REFERENCES products.products(id),
+		REFERENCES products.products(id)
+		ON DELETE CASCADE,
 	CONSTRAINT purchase_fk
 		FOREIGN KEY (purchase_id)
 		REFERENCES products_workers.purchases(id)
+		ON DELETE CASCADE
 );

@@ -24,3 +24,6 @@
 - [INSERT INTO](scripts/insert.sql)
 - [UPDATE FROM](scripts/update.sql)
 - [DELETE](scripts/delete.sql)
+
+Insert:
+В случае с `INNER JOIN` порядок соеденения никак не влияет на результат. Но в случае с `LEFT JOIN` или `RIGHT JOIN` резултат будет другим. В случае с `LEFT JOIN` все столбци из первой объявленной таблицы будут показаны. В случае с `RIGHT JOIN` все столбци из второй объявленной таблицы будут показаны.
