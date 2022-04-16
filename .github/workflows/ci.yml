@@ -1,0 +1,15 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Markdown Linting Action
+        uses: avto-dev/markdown-lint@v1
+        with:
+          args: "."
